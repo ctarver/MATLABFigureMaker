@@ -1,13 +1,14 @@
-WIDTH  = 4;
-HEIGHT = 3;
-AXIS_FONT_SIZE = 9;
-Yaxis_NAME = 'Amplitude';
-Xaxis_NAME = 'Time';
-LEGEND = {'entry1','entry2'};
+WIDTH  = 3.45;
+HEIGHT = 2.5;
+AXIS_FONT_SIZE = 7;
+LEGEND_FONT_SIZE = 7;
+Yaxis_NAME = 'Power (dBm/MHz)';
+Xaxis_NAME = 'Frequency (MHz)';
+LEGEND = {'No DPD','IM3$_{1;2,3}$','IM3$_{1;3,3}$','IM3$_{2;3,3}$'};
 
 set(gcf, 'PaperPosition', [0 0 WIDTH HEIGHT]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
 set(gcf, 'PaperSize', [WIDTH HEIGHT]); %Keep the same paper size
-
+grid on;
 set(gca,...
   'TickLabelInterpreter', 'latex',...
   'FontUnits','points',...
@@ -28,9 +29,9 @@ xlabel(Xaxis_NAME,...
 legend(LEGEND,...
   'FontUnits','points',...
   'interpreter','latex',...
-  'FontSize',9,...
+  'FontSize',LEGEND_FONT_SIZE,...
   'FontName','Times',...
-  'Location','Best')
+  'Location','south')
 
 saveas(gcf, 'filename', 'pdf')
 open('filename.pdf');
