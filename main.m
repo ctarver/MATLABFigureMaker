@@ -8,6 +8,10 @@ LEGEND = {'No DPD','IM3$_{1;2,3}$','IM3$_{1;3,3}$','IM3$_{2;3,3}$'};
 
 set(gcf, 'PaperPosition', [0 0 WIDTH HEIGHT]); %Position the plot further to the left and down. Extend the plot to fill entire paper.
 set(gcf, 'PaperSize', [WIDTH HEIGHT]); %Keep the same paper size
+
+set(findall(gcf,'Type','Line'),'LineWidth',0.5)%Thin and crisp lines
+box on; %Border around the plot
+
 grid on;
 set(gca,...
   'TickLabelInterpreter', 'latex',...
